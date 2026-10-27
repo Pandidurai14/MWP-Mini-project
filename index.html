@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder | Personal Resume Builder using HTML5 and CSS3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">RB</span>
+      <div>
+        <h1>Resume Builder</h1>
+        <p>Personal Resume Builder using HTML5 &amp; CSS3</p>
+      </div>
+    </div>
+    <button class="btn-print" onclick="window.print()">⬇ Download / Print</button>
+  </header>
+
+  <div class="container">
+
+    <!-- ===== LEFT: FORM ===== -->
+    <section class="panel form-panel">
+      <h2 class="panel-title">Fill Your Details</h2>
+
+      <!-- Basic Info -->
+      <fieldset>
+        <legend>Basic Information</legend>
+        <label>Full Name
+          <input type="text" id="fName" value="ARJUN KUMAR" oninput="update()">
+        </label>
+        <label>Job Title
+          <input type="text" id="fJob" value="Frontend Developer" oninput="update()">
+        </label>
+        <div class="row2">
+          <label>Email
+            <input type="email" id="fEmail" value="arjun@email.com" oninput="update()">
+          </label>
+          <label>Phone
+            <input type="tel" id="fPhone" value="+91 98765 43210" oninput="update()">
+          </label>
+        </div>
+        <div class="row2">
+          <label>Location
+            <input type="text" id="fLoc" value="Chennai, India" oninput="update()">
+          </label>
+          <label>Website / LinkedIn
+            <input type="text" id="fWeb" value="linkedin.com/in/arjun" oninput="update()">
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Objective -->
+      <fieldset>
+        <legend>Career Objective</legend>
+        <textarea id="fObjective" rows="3" oninput="update()">Motive to work in a challenging environment where I can utilize my skills for the growth of the organization and enhance my knowledge.</textarea>
+      </fieldset>
+
+      <!-- Education -->
+      <fieldset>
+        <legend>Education</legend>
+        <label>Degree
+          <input type="text" id="fDegree" value="B.E. Computer Science" oninput="update()">
+        </label>
+        <div class="row2">
+          <label>Institution
+            <input type="text" id="fCollege" value="Anna University" oninput="update()">
+          </label>
+          <label>Year
+            <input type="text" id="fYear" value="2022 - 2026" oninput="update()">
+          </label>
+        </div>
+        <label>Percentage / CGPA
+          <input type="text" id="fScore" value="8.2 CGPA" oninput="update()">
+        </label>
+      </fieldset>
+
+      <!-- Skills -->
+      <fieldset>
+        <legend>Skills <small>(comma separated)</small></legend>
+        <textarea id="fSkills" rows="2" oninput="update()">HTML5, CSS3, JavaScript, Responsive Design, Git, Figma</textarea>
+      </fieldset>
+
+      <!-- Experience -->
+      <fieldset>
+        <legend>Experience</legend>
+        <label>Role
+          <input type="text" id="fRole" value="Web Design Intern" oninput="update()">
+        </label>
+        <div class="row2">
+          <label>Company
+            <input type="text" id="fCompany" value="Tech Solutions Pvt Ltd" oninput="update()">
+          </label>
+          <label>Duration
+            <input type="text" id="fDuration" value="Jun 2025 - Aug 2025" oninput="update()">
+          </label>
+        </div>
+        <label>Work Description
+          <textarea id="fWork" rows="3" oninput="update()">Designed and developed 5+ responsive websites. Collaborated with the design team to improve UI consistency and page load speed.</textarea>
+        </label>
+      </fieldset>
+
+      <!-- Projects -->
+      <fieldset>
+        <legend>Projects</legend>
+        <label>Project Title
+          <input type="text" id="fProj" value="Personal Portfolio Website" oninput="update()">
+        </label>
+        <label>Description
+          <textarea id="fProjDesc" rows="2" oninput="update()">A responsive portfolio built using HTML5, CSS3 with modern layout techniques.</textarea>
+        </label>
+      </fieldset>
+    </section>
+
+    <!-- ===== RIGHT: LIVE PREVIEW ===== -->
+    <section class="panel preview-panel">
+      <h2 class="panel-title">Live Preview</h2>
+
+      <article class="resume" id="resume">
+        <!-- Header -->
+        <div class="resume-head">
+          <h2 id="pName">ARJUN KUMAR</h2>
+          <p class="jobtitle" id="pJob">Frontend Developer</p>
+          <p class="contact">
+            <span id="pEmail">arjun@email.com</span> •
+            <span id="pPhone">+91 98765 43210</span> •
+            <span id="pLoc">Chennai, India</span> •
+            <span id="pWeb">linkedin.com/in/arjun</span>
+          </p>
+        </div>
+
+        <!-- Objective -->
+        <div class="resume-section">
+          <h3>Career Objective</h3>
+          <p id="pObjective">Motive to work in a challenging environment...</p>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-section">
+          <h3>Education</h3>
+          <div class="entry">
+            <div class="entry-main">
+              <strong id="pDegree">B.E. Computer Science</strong>
+              <span id="pCollege">Anna University</span>
+            </div>
+            <div class="entry-side">
+              <span id="pYear">2022 - 2026</span>
+              <span id="pScore">8.2 CGPA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="resume-section">
+          <h3>Skills</h3>
+          <div class="chips" id="pSkills">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+            <span>Responsive Design</span><span>Git</span><span>Figma</span>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="resume-section">
+          <h3>Experience</h3>
+          <div class="entry">
+            <div class="entry-main">
+              <strong id="pRole">Web Design Intern</strong>
+              <span id="pCompany">Tech Solutions Pvt Ltd</span>
+            </div>
+            <div class="entry-side">
+              <span id="pDuration">Jun 2025 - Aug 2025</span>
+            </div>
+          </div>
+          <p id="pWork">Designed and developed 5+ responsive websites...</p>
+        </div>
+
+        <!-- Projects -->
+        <div class="resume-section">
+          <h3>Projects</h3>
+          <div class="entry">
+            <div class="entry-main">
+              <strong id="pProj">Personal Portfolio Website</strong>
+            </div>
+          </div>
+          <p id="pProjDesc">A responsive portfolio built using HTML5, CSS3...</p>
+        </div>
+      </article>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Personal Resume Builder &copy; 2026 | Built with HTML5 &amp; CSS3</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
